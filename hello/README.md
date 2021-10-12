@@ -5,3 +5,12 @@
 ###    $git clone git@github.com:EvelioOrnelas/web3-enornelas.git
 ###    $cd web3-enornelas/hello
 ###    $node server.js
+
+![getUsers](getUsers.png)
+![addUserForm](addUserForm.png)
+![addUsers](addUser.png)
+![changeUserForm](changeUserForm.png)
+![changeUser](changeUser.png)
+![deleteUserForm](deleteUserForm.png)
+![deleteUser](deleteUser.png)
+![getUsersFinal](getUsersFinal.png)
