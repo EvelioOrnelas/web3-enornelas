@@ -63,7 +63,7 @@ class Edit extends Component {
       )
       .then((res) => console.log(res.data));
  
-    this.props.history.push("/");
+    this.props.history.push("/dashboard");
     window.location.reload();
   }
  

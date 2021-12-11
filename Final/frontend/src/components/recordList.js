@@ -10,7 +10,7 @@ const Record = (props) => (
     <td>
       <Link to={"/edit/" + props.record._id}>Edit</Link> |
       <a
-        href="/"
+        href="/dashboard"
         onClick={() => {
           props.deleteRecord(props.record._id);
         }}

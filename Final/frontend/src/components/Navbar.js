@@ -9,7 +9,7 @@ const Navbar = () => {
     <div>
         <Container>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <NavLink className="navbar-brand" to="/">
+        <NavLink className="navbar-brand" to="/dashboard">
           Home
         </NavLink>
         <button
@@ -29,6 +29,11 @@ const Navbar = () => {
             <li className="nav-item">
               <NavLink className="nav-link" to="/create">
                 Create User
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/">
+                Logout
               </NavLink>
             </li>
           </ul>
