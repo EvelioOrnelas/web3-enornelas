@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import logo from '../images/haydendata.jpeg'
 import '../Login.css'
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -48,9 +47,6 @@ render() {
 return (
       <div className="form">
         <form noValidate onSubmit={this.onSubmit}>
-            <div class="imagecontainer">
-                <img src={logo} alt="logo" class="logo"/>
-            </div>
             <div className="UserName">
             <input
                 placeholder="User Name"

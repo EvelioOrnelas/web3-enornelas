@@ -34,7 +34,8 @@ if (localStorage.jwtToken) {
   }
 }
 
-const App = () => {
+class App extends Component {
+  render() {
   return (
     <Provider store={store}>
       <Router>
@@ -42,18 +43,20 @@ const App = () => {
           <Container>
           <Switch>
             <Route exact path='/' component={Login} />
-              <div>
+            <div>
               <Navbar />
-              <Route exact path="/dashboard"><RecordList/></Route>
+              {/* <Route exact path="/dashboard"><RecordList/></Route> */}
+              <PrivateRoute exact path="/dashboard" component={RecordList} />
               <Route exact path="/edit/:id" component={Edit}/>
               <Route exact path="/create"><Create/></Route>
-              </div>
+            </div>
           </Switch>
           </Container>
         </main>
       </Router>
     </Provider>
   );
-};
+}
+}
 
 export default App;

@@ -49,6 +49,19 @@ recordRoutes.route("/record/add").post(function (req, response) {
   });
 });
 
+// This section will help you create a new record.
+recordRoutes.route("/record/register").post(function (req, response) {
+  let db_connect = dbo.getDb();
+  let myobj = {
+    username: req.body.username,
+    password: req.body.password,
+  };
+  db_connect.collection("users").insertOne(myobj, function (err, res) {
+    if (err) throw err;
+    response.json(res);
+  });
+});
+
 // This section will help you update a record by id.
 recordRoutes.route("/update/:id").post(function (req, response) {
   let db_connect = dbo.getDb();
