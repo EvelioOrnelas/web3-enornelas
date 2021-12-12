@@ -49,7 +49,7 @@ return (
         <form noValidate onSubmit={this.onSubmit}>
             <div className="UserName">
             <input
-                placeholder="User Name"
+                placeholder="username"
                 onChange={this.onChange}
                 value={this.state.username}
                 error={errors.username}

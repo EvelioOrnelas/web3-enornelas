@@ -8,6 +8,9 @@ const validateRegisterInput = require("../validation/register");
 const validateLoginInput = require("../validation/login");
 // Load User model
 const User = require("../models/User");
+const recordRoutes = express.Router();
+const ObjectId = require("mongodb").ObjectId;
+const dbo = require("../db/keys");
 // @route POST api/users/register
 // @desc Register user
 // @access Public
@@ -90,5 +93,24 @@ router.post("/login", (req, res) => {
       });
     });
   });
+
+  //This section will help you get a list of all the users.
+//   router.route("/record").get(function (req, res) {
+//   let db_connect = dbo.getDb("employees");
+//   db_connect
+//     .collection("users")
+//     .find({})
+//     .toArray(function (err, result) {
+//       if (err) throw err;
+//       res.json(result);
+//     });
+// });
+// router.post('/record').get((req, res) => {
+// 	User.find(function(err, users) {
+// 		if (err)
+// 			res.send(err)
+// 		res.json(users);
+// 	});
+// });
 
   module.exports = router;

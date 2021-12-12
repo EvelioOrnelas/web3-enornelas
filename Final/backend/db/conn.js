@@ -23,4 +23,5 @@ module.exports = {
   getDb: function () {
     return _db;
   },
+  secretOrKey: "secret"
 };
