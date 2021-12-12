@@ -2,4 +2,4 @@
 
 | Assignment | Due-Date | Completed |
 |-----------:|:---------:|:------------:|
-| 1) Basic API  | 10-13-21 | <ul><li>[x]</li><li>[ ]  |
+| 1) Basic API  | 10-13-21 | :white_check_mark |
