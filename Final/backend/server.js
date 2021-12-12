@@ -15,23 +15,14 @@ app.use(
   })
 );
  app.use(require("./routes/record"));
- const db = require("./db/keys").mongoURI;
+ const db = require("./db/conn").mongoURI;
  const db2 = require("./db/conn");
-// Connect to MongoDB
 mongoose.connect(db, { useNewUrlParser: true })
-  .then(() => console.log("MongoDB successfully connected"))
-  .catch(err => console.log(err));
-
-  db2.connectToServer(function (err) {
-    if (err) console.error(err);
-  });
-  
-
-  // Passport middleware
-app.use(passport.initialize());
-// Passport config
+db2.connectToServer(function (err) {
+  if (err) console.error(err);
+});
+  app.use(passport.initialize());
 require("./db/passport")(passport);
-// Routes
 app.use("/routes/users", users);
 app.use(require("./routes/record"));
 const port = process.env.PORT || 5000;

@@ -13,7 +13,6 @@ class Navbar extends Component {
     this.props.logoutUser();
   };
   render() {
-    const { user } = this.props.auth;
     return (
       <div>
           <Container>
@@ -40,7 +39,9 @@ class Navbar extends Component {
                   Create User
                 </NavLink>
               </li>
-              <li className="nav-item">
+            </ul>
+            <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
                 <NavLink className="nav-link" to="/" onClick={this.onLogoutClick}>
                   Logout
                 </NavLink>

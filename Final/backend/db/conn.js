@@ -19,9 +19,9 @@ module.exports = {
       return callback(err);
          });
   },
- 
   getDb: function () {
     return _db;
   },
-  secretOrKey: "secret"
+  mongoURI: Db,
+  // secretOrKey: "secret"
 };

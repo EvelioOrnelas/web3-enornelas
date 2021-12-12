@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import {Container} from 'react-bootstrap'
 // We import all the components we need in our app
-import Navbar from "./components/navbar";
+import NavBar from "./components/navbar";
 import Edit from "./components/edit";
 import Create from "./components/create";
 import RecordList from "./components/recordList";
@@ -44,7 +44,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/' component={Login} />
             <div>
-              <Navbar />
+              <NavBar />
               {/* <Route exact path="/dashboard"><RecordList/></Route> */}
               <PrivateRoute exact path="/dashboard" component={RecordList} />
               <Route exact path="/edit/:id" component={Edit}/>

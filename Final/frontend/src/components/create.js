@@ -1,9 +1,6 @@
 import React, { Component } from "react";
-// This will require to npm install axios
 import axios from 'axios';
-// import bcrypt from 'bcryptjs'
-
-// const salt = bcrypt.genSaltSync(10)
+import '../Login.css'
  
 export default class Create extends Component {
   // This is the constructor that stores the data.
@@ -19,7 +16,6 @@ export default class Create extends Component {
       password: "",
     };
   }
- 
   // These methods will update the state properties.
   onChangePersonUserName(e) {
     this.setState({
@@ -58,11 +54,11 @@ export default class Create extends Component {
   // This following section will display the form that takes the input from the user.
   render() {
     return (
-      <div style={{ marginTop: 20 }}>
-        <h3>Create New Record</h3>
+      <div className='form' style={{ marginTop: 20 }}>
+        <h3>Create New User</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
-            <label>User Name: </label>
+            <label>User Name </label>
             <input
               type="text"
               className="form-control"
@@ -71,20 +67,16 @@ export default class Create extends Component {
             />
           </div>
           <div className="form-group">
-            <label>Password: </label>
+            <label>Password </label>
             <input
-              type="text"
+              type="password"
               className="form-control"
               value={this.state.password}
               onChange={this.onChangePersonPassword}
             />
           </div>
           <div className="form-group">
-            <input
-              type="submit"
-              value="Register"
-              className="btn btn-primary"
-            />
+            <button type="submit" onClick={event =>  window.location.href='/dashboard'}>Register</button>
           </div>
         </form>
       </div>

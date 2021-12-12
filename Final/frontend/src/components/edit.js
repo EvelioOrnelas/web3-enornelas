@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// This will require to npm install axios
 import axios from 'axios';
 import { withRouter } from "react-router";
  
@@ -25,7 +24,7 @@ class Edit extends Component {
       .then((response) => {
         this.setState({
           username: response.data.username,
-          password: response.data.password,
+          //password: response.data.password,
         });
       })
       .catch(function (error) {
@@ -85,7 +84,7 @@ class Edit extends Component {
           <div className="form-group">
             <label>Password: </label>
             <input
-              type="text"
+              type="password"
               className="form-control"
               value={this.state.password}
               onChange={this.onChangePersonPassword}
