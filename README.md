@@ -2,4 +2,4 @@
 
 | Assignment | Due-Date | Completed |
 |-----------:|:---------:|:------------:|
-| 1) Basic API  | 10-13-21 | :white_check_mark |
+| 1) Basic API  | 10-13-21 | :white_check_mark: |
