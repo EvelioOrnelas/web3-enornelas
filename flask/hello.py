@@ -10,6 +10,20 @@ db = mongo.db
 
 db_operations = db.users
 
+#All the routings in our app will be mentioned here.
+@app.route('/')
+def test():
+    return render_template('index.html')
+
+@app.route('/getUsers')
+def get():
+    documents = db_operations.find()
+    response = []
+    for document in documents:
+        document['_id'] = str(document['_id'])
+        response.append(document)
+    return json.dumps(response)
+
 
 
 
