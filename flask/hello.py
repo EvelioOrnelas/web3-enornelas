@@ -24,7 +24,32 @@ def get():
         response.append(document)
     return json.dumps(response)
 
+@app.route("/addUser", methods=['POST'])
+def insert_document():
+    username = request.form['username']
+    password = request.form['password']
+    result = db_operations.insert_one({'username': username, 'password': password})
+    return ('Successfully added user to Database!')
 
+@app.route('/changeUser', methods=['POST'])
+def update():
+    currentusername = request.form['currentusername']
+    newusername = request.form['newusername']
+    result = db_operations.find_one_and_update({'username': currentusername}, {'$set': {'username': newusername}})
+    if not result:
+        return 'Could not find user!'
+    else:
+        return 'Successfully updated user.'
+
+@app.route('/deleteUser', methods=['POST'])
+def delete():
+    username = request.form['username']
+    # filt = {'Name' : 'xyz'}
+    result = db_operations.find_one_and_delete({'username': username})
+    if not result:
+        return 'Could not find or delete user!'
+    else:
+        return 'Successfully deleted user.'
 
 
 if __name__ == "__main__":
